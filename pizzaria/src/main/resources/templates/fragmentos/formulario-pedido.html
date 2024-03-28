@@ -1,0 +1,13 @@
+<h1>Formulário de Pedido</h1>
+<form action="/enviar-pedido" method="post">
+    <div th:each="produto : ${produtos}">
+        <label th:text="${produto.nome}"></label>
+        <input type="number" name="quantidade_produto_${produto.id}" min="0" value="0">
+        <br>
+    </div>
+    <div class="mb-3">
+        <label for="endereco">Endereço de Entrega:</label>
+        <input type="text" name="endereco" id="endereco" class="form-control" placeholder="Endereço de Entrega">
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+</form>
